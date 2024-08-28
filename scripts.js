@@ -45,22 +45,27 @@ function imprimePregunta(pregunta) {
 
 function imprimeTitulo(pregunta) {
   // Put your code here
+  return "<p>" + pregunta.titulo + "</p>"
 }
 
 function imprimeTodasLasRespuestas(pregunta) {
   // Put your code here
+  return pregunta.respuestas.length
 }
 
 function imprimeUnaRespuesta(respuesta) {
   // Put your code here
+  return imprimeLabel(respuesta)+imprimeInput(respuesta)
 }
 
 function imprimeLabel(respuesta) {
   // Put your code here
+  return `<label for=${pregunta.respuestas[respuesta].value}>${pregunta.respuestas.label} </label>`
 }
 
 function imprimeInput(respuesta) {
   // Put your code here
+  return `<input id=${pregunta.respuestas.id} name=${pregunta.respuestas.name} type="radio" value=${pregunta.respuestas.value}>`
 }
 
 document.getElementById("contenedorPreguntas").innerHTML = imprimePregunta(pregunta);
